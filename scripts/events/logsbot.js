@@ -4,8 +4,13 @@ module.exports = {
 	config: {
 		name: "logsbot",
 		isBot: true,
+<<<<<<< HEAD
 		version: "2.3.5",
 		author: "ST",
+=======
+		version: "1.4",
+		author: "NTKhang",
+>>>>>>> 9bbaa51 (update)
 		envConfig: {
 			allow: true
 		},
@@ -32,11 +37,16 @@ module.exports = {
 			(event.logMessageType == "log:subscribe" && event.logMessageData.addedParticipants.some(item => item.userFbId == api.getCurrentUserID()))
 			|| (event.logMessageType == "log:unsubscribe" && event.logMessageData.leftParticipantFbId == api.getCurrentUserID())
 		) return async function () {
+<<<<<<< HEAD
+=======
+			let msg = getLang("title");
+>>>>>>> 9bbaa51 (update)
 			const { author, threadID } = event;
 			if (author == api.getCurrentUserID())
 				return;
 			let threadName;
 			const { config } = global.GoatBot;
+<<<<<<< HEAD
 			const { botLogging } = config;
 
 			// Check if logging is enabled for this event type
@@ -56,11 +66,22 @@ module.exports = {
 			let msg = getLang("title");
 
 			if (event.logMessageType == "log:subscribe") {
+=======
+
+			if (event.logMessageType == "log:subscribe") {
+				if (!event.logMessageData.addedParticipants.some(item => item.userFbId == api.getCurrentUserID()))
+					return;
+>>>>>>> 9bbaa51 (update)
 				threadName = (await api.getThreadInfo(threadID)).threadName;
 				const authorName = await usersData.getName(author);
 				msg += getLang("added", authorName);
 			}
 			else if (event.logMessageType == "log:unsubscribe") {
+<<<<<<< HEAD
+=======
+				if (event.logMessageData.leftParticipantFbId != api.getCurrentUserID())
+					return;
+>>>>>>> 9bbaa51 (update)
 				const authorName = await usersData.getName(author);
 				const threadData = await threadsData.get(threadID);
 				threadName = threadData.threadName;
@@ -68,6 +89,7 @@ module.exports = {
 			}
 			const time = getTime("DD/MM/YYYY HH:mm:ss");
 			msg += getLang("footer", author, threadName, threadID, time);
+<<<<<<< HEAD
 			
 			// Send to specified thread IDs if enabled
 			if (botLogging && botLogging.enable && botLogging.sendToThreads && botLogging.logThreadIds && botLogging.logThreadIds.length > 0) {
@@ -104,6 +126,11 @@ module.exports = {
 					}
 				}
 			}
+=======
+
+			for (const adminID of config.adminBot)
+				api.sendMessage(msg, adminID);
+>>>>>>> 9bbaa51 (update)
 		};
 	}
 };

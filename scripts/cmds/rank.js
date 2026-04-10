@@ -22,7 +22,11 @@ module.exports = {
 	config: {
 		name: "rank",
 		version: "1.7",
+<<<<<<< HEAD
 		author: "NTKhang",
+=======
+		author: "Charles MK",
+>>>>>>> 9bbaa51 (update)
 		countDown: 5,
 		role: 0,
 		description: {

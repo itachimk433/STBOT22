@@ -2,7 +2,11 @@ module.exports = {
 	config: {
 		name: "onlyadminbox",
 		aliases: ["onlyadbox", "adboxonly", "adminboxonly"],
+<<<<<<< HEAD
 		version: "1.4",
+=======
+		version: "1.3",
+>>>>>>> 9bbaa51 (update)
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
@@ -62,4 +66,8 @@ module.exports = {
 		else
 			return message.reply(value ? getLang("turnedOn") : getLang("turnedOff"));
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 9bbaa51 (update)

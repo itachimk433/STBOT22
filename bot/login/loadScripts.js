@@ -10,7 +10,10 @@ const exec = (cmd, options) => new Promise((resolve, reject) => {
 const { log, loading, getText, colors, removeHomeDir } = global.utils;
 const { GoatBot } = global;
 const { configCommands } = GoatBot;
+<<<<<<< HEAD
 const { fcaList, defaultFca } = require(`${process.cwd()}/fca.js`);
+=======
+>>>>>>> 9bbaa51 (update)
 const regExpCheckPackage = /require(\s+|)\((\s+|)[`'"]([^`'"]+)[`'"](\s+|)\)/g;
 const packageAlready = [];
 // const spinner = '\\|/-';
@@ -22,6 +25,7 @@ const spinner = [
 ];
 let count = 0;
 
+<<<<<<< HEAD
 async function ensureFcaPackageInstalled() {
 	const configPath = path.join(process.cwd(), 'config.json');
 	if (!existsSync(configPath)) return;
@@ -75,6 +79,11 @@ async function ensureFcaPackageInstalled() {
 
 module.exports = async function (api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, createLine) {
 	await ensureFcaPackageInstalled();
+=======
+module.exports = async function (api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, createLine) {
+	/* { CHECK ORIGIN CODE } */
+
+>>>>>>> 9bbaa51 (update)
 	const aliasesData = await globalData.get('setalias', 'data', []);
 	if (aliasesData) {
 		for (const data of aliasesData) {
@@ -111,7 +120,11 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 			.filter(file =>
 				file.endsWith(".js") &&
 				!file.endsWith("eg.js") && // ignore example file
+<<<<<<< HEAD
 				!file.match(/(dev)\.js$/g) && // ignore dev file in production mode
+=======
+				(process.env.NODE_ENV == "development" ? true : !file.match(/(dev)\.js$/g)) && // ignore dev file in production mode
+>>>>>>> 9bbaa51 (update)
 				!configCommands[folderModules == "cmds" ? "commandUnload" : "commandEventUnload"]?.includes(file) // ignore unload command
 			);
 
@@ -176,12 +189,19 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 					throw new Error(`category of ${text} undefined`);
 				if (!commandName)
 					throw new Error(`name of ${text} undefined`);
+<<<<<<< HEAD
 				if (!command.onStart && !command.ST)
 					throw new Error(`onStart or ST function of ${text} is required`);
 				if (command.onStart && typeof command.onStart !== "function")
 					throw new Error(`onStart of ${text} must be a function`);
 				if (command.ST && typeof command.ST !== "function")
 					throw new Error(`ST of ${text} must be a function`);
+=======
+				if (!command.onStart)
+					throw new Error(`onStart of ${text} undefined`);
+				if (typeof command.onStart !== "function")
+					throw new Error(`onStart of ${text} must be a function`);
+>>>>>>> 9bbaa51 (update)
 				if (GoatBot[setMap].has(commandName))
 					throw new Error(`${text} "${commandName}" already exists with file "${removeHomeDir(GoatBot[setMap].get(commandName).location || "")}"`);
 				const { onFirstChat, onChat, onLoad, onEvent, onAnyEvent } = command;
@@ -239,6 +259,7 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 						throw new Error("The value of \"onLoad\" must be function");
 					await onLoad({ api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData });
 				}
+<<<<<<< HEAD
 				// ——————————————— CHECK ST FUNCTION ————————————————— //
 				if (command.ST) {
 					if (typeof command.ST != "function")
@@ -246,6 +267,8 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 					// ST function is same as onStart, so we treat it the same way as onStart
 					// Don't call ST during loading, it will be called when the command is executed
 				}
+=======
+>>>>>>> 9bbaa51 (update)
 				// ——————————————— CHECK RUN ANYTIME ——————————————— //
 				if (onChat)
 					GoatBot.onChat.push(commandName);
@@ -261,7 +284,11 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 				// —————————————— IMPORT TO GLOBALGOAT —————————————— //
 				GoatBot[setMap].set(commandName.toLowerCase(), command);
 				commandLoadSuccess++;
+<<<<<<< HEAD
 				// —————————————————COMPARE COMMAND (removed in open source) ————————————————— //
+=======
+				// ————————————————— COMPARE COMMAND (removed in open source) ————————————————— //
+>>>>>>> 9bbaa51 (update)
 
 				global.GoatBot[folderModules == "cmds" ? "commandFilesPath" : "eventCommandsFilesPath"].push({
 					// filePath: pathCommand,

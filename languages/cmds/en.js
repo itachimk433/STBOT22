@@ -345,10 +345,17 @@ module.exports = {
 		description: "View command usage",
 		guide: "{pn} [empty | <page number> | <command name>]",
 		text: {
+<<<<<<< HEAD
 			help: "╭─────────────⭓\n%1\n├─────⭔\n│ Page [ %2/%3 ]\n│ Currently, the bot has %4 commands that can be used\n│ » Type %5help <page> to view the command list\n│ » Type %5help to view the details of how to use that command\n├────────⭔\n│ %6\n╰─────────────⭓",
 			help2: "%1├───────⭔\n│ » Currently, the bot has %2 commands that can be used\n│ » Type %3help <command name> to view the details of how to use that command\n│ %4\n╰─────────────⭓",
 			commandNotFound: "Command \"%1\" does not exist",
 			getInfoCommand: "╭── NAME ────⭓\n│ %1\n├── INFO\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n├── Usage\n%9\n├── Notes\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
+=======
+			help: "Commands:\n%1\nPage %2/%3 • Total: %4\n- Use %5help <page> to list\n- Use %5help <command> for details\n%6",
+			help2: "%1Total: %2\n- Use %3help <command> for details\n%4",
+			commandNotFound: "Command \"%1\" does not exist",
+			getInfoCommand: "Name: %1\nDescription: %2\nAliases: %3\nGroup aliases: %4\nVersion: %5\nRole: %6\nCooldown: %7s\nAuthor: %8\n\nUsage:\n%9\n\nNotes:\n- <> = required, [] = choose one",
+>>>>>>> 9bbaa51 (update)
 			doNotHave: "Do not have",
 			roleText0: "0 (All users)",
 			roleText1: "1 (Group administrators)",
@@ -439,6 +446,11 @@ module.exports = {
 			notInGroup: "Current group chat is not in notification group %1",
 			deleted: "Deleted current group chat from notification group: %1",
 			failed: "Failed to send notification to %1 group chats: \n%2",
+<<<<<<< HEAD
+=======
+			missingGroupNameToRemove: "Please enter groupNoti name you want to remove",
+			removed: "Removed notification group: %1",
+>>>>>>> 9bbaa51 (update)
 			missingGroupNameToSend: "Please enter groupNoti name you want to send message",
 			groupIsEmpty: "Notification group \"%1\" is empty",
 			sending: "Sending notification to %1 group chats",
@@ -682,7 +694,11 @@ module.exports = {
 		text: {
 			syntaxError: "Please enter a location",
 			notFound: "Location not found: %1",
+<<<<<<< HEAD
 			error: "An error occurred: %1",
+=======
+			error: "An error has occurred: %1",
+>>>>>>> 9bbaa51 (update)
 			today: "Today's weather:\n%1\n🌡 Low - high temperature %2°C - %3°C\n🌡 Feels like %4°C - %5°C\n🌅 Sunrise %6\n🌄 Sunset %7\n🌃 Moonrise %8\n🏙️ Moonset %9\n🌞 Day: %10\n🌙 Night: %11"
 		}
 	},
@@ -701,4 +717,8 @@ module.exports = {
 			listChapter: "\n📖 List chapter: %1\n"
 		}
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 9bbaa51 (update)

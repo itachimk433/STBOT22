@@ -63,7 +63,11 @@ module.exports = {
 			rulesNotExistDelete: "Không tồn tại nội quy thứ %1",
 			successDelete: "Đã xóa nội quy thứ %1 của nhóm, nội dung: %2",
 			noPermissionRemove: "Chỉ có quản trị viên nhóm mới có thể xoá bỏ tất cả nội quy của nhóm",
+<<<<<<< HEAD
 			confirmRemove: "⚠️ Thả cảm xúc bất kỳ vào tin nhắn này để xác nhận xóa toàn bộ nội quy của nhóm",
+=======
+			confirmRemove: "⚠ Thả cảm xúc bất kỳ vào tin nhắn này để xác nhận xóa toàn bộ nội quy của nhóm",
+>>>>>>> 9bbaa51 (update)
 			successRemove: "Đã xóa toàn bộ nội quy của nhóm thành công",
 			invalidNumberView: "Vui lòng nhập số thứ tự của nội quy bạn muốn xem"
 		},
@@ -89,7 +93,11 @@ module.exports = {
 			rulesNotExistDelete: "Rule number %1 does not exist",
 			successDelete: "Deleted rule number %1 of group, content: %2",
 			noPermissionRemove: "Only group admins can remove all group rules",
+<<<<<<< HEAD
 			confirmRemove: "⚠️ React to this message with any emoji to confirm remove all group rules",
+=======
+			confirmRemove: "⚠ React to this message with any emoji to confirm remove all group rules",
+>>>>>>> 9bbaa51 (update)
 			successRemove: "Removed all group rules successfully",
 			invalidNumberView: "Please enter the number of the rule you want to view"
 		}

@@ -1,8 +1,13 @@
 module.exports = {
 	config: {
 		name: "autoUpdateThreadInfo",
+<<<<<<< HEAD
 		version: "2.3.5",
 		author: "ST",
+=======
+		version: "1.4",
+		author: "NTKhang",
+>>>>>>> 9bbaa51 (update)
 		category: "events"
 	},
 
@@ -18,6 +23,7 @@ module.exports = {
 			case "log:subscribe":
 				return async function () {
 					const { addedParticipants } = event.logMessageData;
+<<<<<<< HEAD
 					let threadInfo_Fca;
 					try {
 						threadInfo_Fca = await api.getThreadInfo(threadID);
@@ -32,6 +38,10 @@ module.exports = {
 							return;
 						}
 					}
+=======
+					const threadInfo_Fca = await api.getThreadInfo(threadID);
+					threadsData.refreshInfo(threadID, threadInfo_Fca);
+>>>>>>> 9bbaa51 (update)
 
 					for (const user of addedParticipants) {
 						let oldData = members.find(member => member.userID === user.userFbId);

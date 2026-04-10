@@ -1,4 +1,5 @@
 module.exports = function (sequelize) {
+<<<<<<< HEAD
 	const { Model, DataTypes } = require("sequelize");
 	class userModel extends Model { }
 	userModel.init({
@@ -43,4 +44,42 @@ module.exports = function (sequelize) {
 	});
 
 	return userModel;
+=======
+        const { Model, DataTypes } = require("sequelize");
+        class userModel extends Model { }
+        userModel.init({
+                userID: {
+                        type: DataTypes.STRING,
+                        primaryKey: true
+                },
+                name: DataTypes.STRING,
+                gender: DataTypes.STRING,
+                vanity: DataTypes.STRING,
+                exp: {
+                        type: DataTypes.BIGINT,
+                        defaultValue: 0
+                },
+                money: {
+                        type: DataTypes.BIGINT,
+                        defaultValue: 0
+                },
+                banned: {
+                        type: DataTypes.JSON,
+                        defaultValue: {}
+                },
+                settings: {
+                        type: DataTypes.JSON,
+                        defaultValue: {}
+                },
+                data: {
+                        type: DataTypes.JSON,
+                        defaultValue: {}
+                }
+        }, {
+                sequelize,
+                modelName: "user"
+        });
+
+        return userModel;
+>>>>>>> 9bbaa51 (update)
 };

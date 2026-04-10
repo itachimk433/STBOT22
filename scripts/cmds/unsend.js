@@ -1,6 +1,10 @@
 module.exports = {
 	config: {
 		name: "unsend",
+<<<<<<< HEAD
+=======
+		aliases: ["u","r","uns"],
+>>>>>>> 9bbaa51 (update)
 		version: "1.2",
 		author: "NTKhang",
 		countDown: 5,
@@ -30,4 +34,8 @@ module.exports = {
 			return message.reply(getLang("syntaxError"));
 		message.unsend(event.messageReply.messageID);
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 9bbaa51 (update)

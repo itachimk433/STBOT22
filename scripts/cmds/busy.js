@@ -23,18 +23,32 @@ module.exports = {
 
 	langs: {
 		vi: {
+<<<<<<< HEAD
 			turnedOff: "✅ | Đã tắt chế độ không làm phiền",
 			turnedOn: "✅ | Đã bật chế độ không làm phiền",
 			turnedOnWithReason: "✅ | Đã bật chế độ không làm phiền với lý do: %1",
 			turnedOnWithoutReason: "✅ | Đã bật chế độ không làm phiền",
+=======
+			turnedOff: "✓ | Đã tắt chế độ không làm phiền",
+			turnedOn: "✓ | Đã bật chế độ không làm phiền",
+			turnedOnWithReason: "✓ | Đã bật chế độ không làm phiền với lý do: %1",
+			turnedOnWithoutReason: "✓ | Đã bật chế độ không làm phiền",
+>>>>>>> 9bbaa51 (update)
 			alreadyOn: "Hiện tại người dùng %1 đang bận",
 			alreadyOnWithReason: "Hiện tại người dùng %1 đang bận với lý do: %2"
 		},
 		en: {
+<<<<<<< HEAD
 			turnedOff: "✅ | Do not disturb mode has been turned off",
 			turnedOn: "✅ | Do not disturb mode has been turned on",
 			turnedOnWithReason: "✅ | Do not disturb mode has been turned on with reason: %1",
 			turnedOnWithoutReason: "✅ | Do not disturb mode has been turned on",
+=======
+			turnedOff: "✓ | Do not disturb mode has been turned off",
+			turnedOn: "✓ | Do not disturb mode has been turned on",
+			turnedOnWithReason: "✓ | Do not disturb mode has been turned on with reason: %1",
+			turnedOnWithoutReason: "✓ | Do not disturb mode has been turned on",
+>>>>>>> 9bbaa51 (update)
 			alreadyOn: "User %1 is currently busy",
 			alreadyOnWithReason: "User %1 is currently busy with reason: %2"
 		}

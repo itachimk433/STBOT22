@@ -1,7 +1,11 @@
 const { io } = require('socket.io-client');
 const socket = io('http://localhost:3001' /*your url*/, {
 	query: {
+<<<<<<< HEAD
 		verifyToken: "stbotkey"
+=======
+		verifyToken: "Fn96OxLwWEfENTPYPAiXqwdieaIsn4Y5OH2APP0O"
+>>>>>>> 9bbaa51 (update)
 	}
 });
 

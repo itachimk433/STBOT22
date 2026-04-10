@@ -6,7 +6,11 @@ module.exports = {
 		name: "translate",
 		aliases: ["trans"],
 		version: "1.5",
+<<<<<<< HEAD
 		author: "NTKhang",
+=======
+		author: "Charles MK",
+>>>>>>> 9bbaa51 (update)
 		countDown: 5,
 		role: 0,
 		description: {
@@ -35,20 +39,36 @@ module.exports = {
 	langs: {
 		vi: {
 			translateTo: "🌐 Dịch từ %1 sang %2",
+<<<<<<< HEAD
 			invalidArgument: "❌ Sai cú pháp, vui lòng chọn on hoặc off",
 			turnOnTransWhenReaction: `✅ Đã bật tính năng dịch tin nhắn khi thả cảm xúc, thử thả cảm xúc \"${defaultEmojiTranslate}\" vào tin nhắn bắt kỳ để dịch nó (không hỗ trợ tin nhắn của bot)\n Chỉ có thể dịch được những tin nhắn sau khi bật tính năng này`,
 			turnOffTransWhenReaction: "✅ Đã tắt tính năng dịch tin nhắn khi thả cảm xúc",
 			inputEmoji: "🌀 Hãy thả cảm xúc vào tin nhắn này để đặt emoji đó làm emoji dịch tin nhắn",
 			emojiSet: "✅ Đã đặt emoji dịch tin nhắn là %1"
+=======
+			invalidArgument: "✗ Sai cú pháp, vui lòng chọn on hoặc off",
+			turnOnTransWhenReaction: `✓ Đã bật tính năng dịch tin nhắn khi thả cảm xúc, thử thả cảm xúc \"${defaultEmojiTranslate}\" vào tin nhắn bắt kỳ để dịch nó (không hỗ trợ tin nhắn của bot)\n Chỉ có thể dịch được những tin nhắn sau khi bật tính năng này`,
+			turnOffTransWhenReaction: "✓ Đã tắt tính năng dịch tin nhắn khi thả cảm xúc",
+			inputEmoji: "🌀 Hãy thả cảm xúc vào tin nhắn này để đặt emoji đó làm emoji dịch tin nhắn",
+			emojiSet: "✓ Đã đặt emoji dịch tin nhắn là %1"
+>>>>>>> 9bbaa51 (update)
 
 		},
 		en: {
 			translateTo: "🌐 Translate from %1 to %2",
+<<<<<<< HEAD
 			invalidArgument: "❌ Invalid argument, please choose on or off",
 			turnOnTransWhenReaction: `✅ Turn on translate message when reaction, try to react \"${defaultEmojiTranslate}\" to any message to translate it (not support bot message)\n Only translate message after turn on this feature`,
 			turnOffTransWhenReaction: "✅ Turn off translate message when reaction",
 			inputEmoji: "🌀 Please react to this message to set that emoji as emoji to translate message",
 			emojiSet: "✅ Emoji to translate message is set to %1"
+=======
+			invalidArgument: "✗ Invalid argument, please choose on or off",
+			turnOnTransWhenReaction: `✓ Turn on translate message when reaction, try to react \"${defaultEmojiTranslate}\" to any message to translate it (not support bot message)\n Only translate message after turn on this feature`,
+			turnOffTransWhenReaction: "✓ Turn off translate message when reaction",
+			inputEmoji: "🌀 Please react to this message to set that emoji as emoji to translate message",
+			emojiSet: "✓ Emoji to translate message is set to %1"
+>>>>>>> 9bbaa51 (update)
 		}
 	},
 
@@ -153,4 +173,8 @@ async function translate(text, langCode) {
 async function translateAndSendMessage(content, langCodeTrans, message, getLang) {
 	const { text, lang } = await translate(content.trim(), langCodeTrans.trim());
 	return message.reply(`${text}\n\n${getLang("translateTo", lang, langCodeTrans)}`);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9bbaa51 (update)

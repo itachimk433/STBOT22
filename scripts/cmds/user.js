@@ -28,7 +28,11 @@ module.exports = {
 
 	langs: {
 		vi: {
+<<<<<<< HEAD
 			noUserFound: "❌ Không tìm thấy người dùng nào có tên khớp với từ khóa: \"%1\" trong dữ liệu của bot",
+=======
+			noUserFound: "✗ Không tìm thấy người dùng nào có tên khớp với từ khóa: \"%1\" trong dữ liệu của bot",
+>>>>>>> 9bbaa51 (update)
 			userFound: "🔎 Tìm thấy %1 người dùng có tên trùng với từ khóa \"%2\" trong dữ liệu của bot:\n%3",
 			uidRequired: "Uid của người cần ban không được để trống, vui lòng nhập uid hoặc tag hoặc reply tin nhắn của 1 người theo cú pháp user ban <uid> <lý do>",
 			reasonRequired: "Lý do ban người dùng không được để trống, vui lòng nhập uid hoặc tag hoặc reply tin nhắn của 1 người theo cú pháp user ban <uid> <lý do>",
@@ -39,7 +43,11 @@ module.exports = {
 			userUnbanned: "Đã bỏ cấm người dùng mang id [%1 | %2], hiện tại người này có thể sử dụng bot"
 		},
 		en: {
+<<<<<<< HEAD
 			noUserFound: "❌ No user found with name matching keyword: \"%1\" in bot data",
+=======
+			noUserFound: "✗ No user found with name matching keyword: \"%1\" in bot data",
+>>>>>>> 9bbaa51 (update)
 			userFound: "🔎 Found %1 user with name matching keyword \"%2\" in bot data:\n%3",
 			uidRequired: "Uid of user to ban cannot be empty, please enter uid or tag or reply message of 1 user by user ban <uid> <reason>",
 			reasonRequired: "Reason to ban user cannot be empty, please enter uid or tag or reply message of 1 user by user ban <uid> <reason>",

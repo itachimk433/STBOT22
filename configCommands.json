@@ -6,10 +6,13 @@
   },
   "envCommands": {
     "daily": {
+<<<<<<< HEAD
       "rewardDay1": {
         "coin": 100,
         "exp": 10
       },
+=======
+>>>>>>> 9bbaa51 (update)
       "rewardFirstDay": {
         "coin": 100,
         "exp": 10
@@ -35,5 +38,12 @@
     "logsbot": {
       "allow": true
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  "commandUnload": [
+    "alldl.js"
+  ]
+>>>>>>> 9bbaa51 (update)
 }

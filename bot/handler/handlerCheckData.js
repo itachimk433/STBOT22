@@ -10,7 +10,11 @@ module.exports = async function (usersData, threadsData, event) {
 	// ———————————— CHECK THREAD DATA ———————————— //
 	if (threadID) {
 		try {
+<<<<<<< HEAD
 			if (global.temp.createThreadDataError.includes(threadID))
+=======
+			if (global.temp.createThreadDataError.has(threadID))
+>>>>>>> 9bbaa51 (update)
 				return;
 
 			const findInCreatingThreadData = creatingThreadData.find(t => t.threadID == threadID);
@@ -27,7 +31,11 @@ module.exports = async function (usersData, threadsData, event) {
 		}
 		catch (err) {
 			if (err.name != "DATA_ALREADY_EXISTS") {
+<<<<<<< HEAD
 				global.temp.createThreadDataError.push(threadID);
+=======
+				global.temp.createThreadDataError.add(threadID);
+>>>>>>> 9bbaa51 (update)
 				log.err("DATABASE", getText("handlerCheckData", "cantCreateThread", threadID), err);
 			}
 		}
@@ -36,11 +44,14 @@ module.exports = async function (usersData, threadsData, event) {
 
 	// ————————————— CHECK USER DATA ————————————— //
 	if (senderID) {
+<<<<<<< HEAD
 		// Skip userID 0 (unreact events from Facebook API)
 		if (senderID === 0 || senderID === '0') {
 			return;
 		}
 		
+=======
+>>>>>>> 9bbaa51 (update)
 		try {
 			const findInCreatingUserData = creatingUserData.find(u => u.userID == senderID);
 			if (!findInCreatingUserData) {

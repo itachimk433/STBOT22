@@ -27,13 +27,21 @@ module.exports = {
 			syntaxError: "Sai cú pháp, chỉ có thể dùng {pn} on hoặc {pn} off",
 			turnedOn: "Đã bật thông báo level up",
 			turnedOff: "Đã tắt thông báo level up",
+<<<<<<< HEAD
 			notiMessage: "🎉🎉 chúc mừng bạn đạt level %1"
+=======
+			notiMessage: "★★ chúc mừng bạn đạt level %1"
+>>>>>>> 9bbaa51 (update)
 		},
 		en: {
 			syntaxError: "Syntax error, only use {pn} on or {pn} off",
 			turnedOn: "Turned on level up notification",
 			turnedOff: "Turned off level up notification",
+<<<<<<< HEAD
 			notiMessage: "🎉🎉 Congratulations on reaching level %1"
+=======
+			notiMessage: "★★ Congratulations on reaching level %1"
+>>>>>>> 9bbaa51 (update)
 		}
 	},
 

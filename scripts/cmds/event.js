@@ -12,8 +12,13 @@ function getDomain(url) {
 module.exports = {
 	config: {
 		name: "event",
+<<<<<<< HEAD
 		version: "2.4.75",
 		author: "ST | Sheikh Tamim",//real author NTkhang
+=======
+		version: "1.9",
+		author: "NTKhang",
+>>>>>>> 9bbaa51 (update)
 		countDown: 5,
 		role: 2,
 		description: {
@@ -35,6 +40,7 @@ module.exports = {
 
 	langs: {
 		vi: {
+<<<<<<< HEAD
 			missingFileName: "⚠️ | Vui lòng nhập vào tên lệnh bạn muốn reload",
 			loaded: "✅ | Đã load event command \"%1\" thành công",
 			loadedError: "❌ | Load event command \"%1\" thất bại với lỗi\n%2: %3",
@@ -73,6 +79,46 @@ module.exports = {
 			missingFile: "⚠️ | File \"%1\" not found",
 			invalidFileName: "⚠️ | Invalid file name",
 			unloadedFile: "✅ | Unloaded command \"%1\""
+=======
+			missingFileName: "⚠ | Vui lòng nhập vào tên lệnh bạn muốn reload",
+			loaded: "✓ | Đã load event command \"%1\" thành công",
+			loadedError: "✗ | Load event command \"%1\" thất bại với lỗi\n%2: %3",
+			loadedSuccess: "✓ | Đã load thành công \"%1\" event command",
+			loadedFail: "✗ | Load thất bại event command \"%1\"\n%2",
+			missingCommandNameUnload: "⚠ | Vui lòng nhập vào tên lệnh bạn muốn unload",
+			unloaded: "✓ | Đã unload event command \"%1\" thành công",
+			unloadedError: "✗ | Unload event command \"%1\" thất bại với lỗi\n%2: %3",
+			missingUrlCodeOrFileName: "⚠ | Vui lòng nhập vào url hoặc code và tên file lệnh bạn muốn cài đặt",
+			missingUrlOrCode: "⚠ | Vui lòng nhập vào url hoặc code của tệp lệnh bạn muốn cài đặt",
+			missingFileNameInstall: "⚠ | Vui lòng nhập vào tên file để lưu lệnh (đuôi .js)",
+			invalidUrlOrCode: "⚠ | Không thể lấy được mã lệnh",
+			alreadExist: "⚠ | File lệnh đã tồn tại, bạn có chắc chắn muốn ghi đè lên file lệnh cũ không?\nThả cảm xúc bất kì vào tin nhắn này để tiếp tục",
+			installed: "✓ | Đã cài đặt event command \"%1\" thành công, file lệnh được lưu tại %2",
+			installedError: "✗ | Cài đặt event command \"%1\" thất bại với lỗi\n%2: %3",
+			missingFile: "⚠ | Không tìm thấy tệp lệnh \"%1\"",
+			invalidFileName: "⚠ | Tên tệp lệnh không hợp lệ",
+			unloadedFile: "✓ | Đã unload lệnh \"%1\""
+		},
+		en: {
+			missingFileName: "⚠ | Please enter the command name you want to reload",
+			loaded: "✓ | Loaded event command \"%1\" successfully",
+			loadedError: "✗ | Loaded event command \"%1\" failed with error\n%2: %3",
+			loadedSuccess: "✓ | Loaded \"%1\" event command successfully",
+			loadedFail: "✗ | Loaded event command \"%1\" failed\n%2",
+			missingCommandNameUnload: "⚠ | Please enter the command name you want to unload",
+			unloaded: "✓ | Unloaded event command \"%1\" successfully",
+			unloadedError: "✗ | Unloaded event command \"%1\" failed with error\n%2: %3",
+			missingUrlCodeOrFileName: "⚠ | Please enter the url or code and command file name you want to install",
+			missingUrlOrCode: "⚠ | Please enter the url or code of the command file you want to install",
+			missingFileNameInstall: "⚠ | Please enter the file name to save the command (with .js extension)",
+			invalidUrlOrCode: "⚠ | Unable to get command code",
+			alreadExist: "⚠ | The command file already exists, are you sure you want to overwrite the old command file?\nReact to this message to continue",
+			installed: "✓ | Installed event command \"%1\" successfully, the command file is saved at %2",
+			installedError: "✗ | Installed event command \"%1\" failed with error\n%2: %3",
+			missingFile: "⚠ | File \"%1\" not found",
+			invalidFileName: "⚠ | Invalid file name",
+			unloadedFile: "✓ | Unloaded command \"%1\""
+>>>>>>> 9bbaa51 (update)
 		}
 	},
 
@@ -94,6 +140,10 @@ module.exports = {
 					.filter(file =>
 						file.endsWith(".js") &&
 						!file.match(/(eg)\.js$/g) &&
+<<<<<<< HEAD
+=======
+						(process.env.NODE_ENV == "development" ? true : !file.match(/(dev)\.js$/g)) &&
+>>>>>>> 9bbaa51 (update)
 						!configCommands.commandEventUnload?.includes(file)
 					)
 					.map(item => item = item.split(".")[0]) :
@@ -110,7 +160,11 @@ module.exports = {
 			if (arraySucces.length > 0)
 				msg += getLang("loadedSuccess", arraySucces.length) + '\n';
 			if (arrayFail.length > 0)
+<<<<<<< HEAD
 				msg += (msg ? '\n' : '') + getLang("loadedFail", arrayFail.length, "❗" + arrayFail.join("\n❗ "));
+=======
+				msg += (msg ? '\n' : '') + getLang("loadedFail", arrayFail.length, "!" + arrayFail.join("\n! "));
+>>>>>>> 9bbaa51 (update)
 			message.reply(msg);
 		}
 		else if (args[0] == "unload") {
@@ -207,6 +261,7 @@ module.exports = {
 			return;
 		const { configCommands } = global.GoatBot;
 		const { log, loadScripts } = global.utils;
+<<<<<<< HEAD
 		const infoLoad = loadScripts("events", fileName, log, configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang, rawCode);
 		
 		if (infoLoad.status == "success") {
@@ -225,5 +280,11 @@ module.exports = {
 		} else {
 			message.reply(getLang("installedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message, () => message.unsend(messageID)));
 		}
+=======
+		const infoLoad = loadScripts("cmds", fileName, log, configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang, rawCode);
+		infoLoad.status == "success" ?
+			message.reply(getLang("installed", infoLoad.name, path.join(__dirname, '..', 'events', fileName).replace(process.cwd(), ""), () => message.unsend(messageID))) :
+			message.reply(getLang("installedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message, () => message.unsend(messageID)));
+>>>>>>> 9bbaa51 (update)
 	}
 };

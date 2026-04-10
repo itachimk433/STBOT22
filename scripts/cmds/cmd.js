@@ -6,7 +6,11 @@ const cheerio = require("cheerio");
 const { client } = global;
 
 const { configCommands } = global.GoatBot;
+<<<<<<< HEAD
 const { log, loading, removeHomeDir, getPrefix } = global.utils;
+=======
+const { log, loading, removeHomeDir } = global.utils;
+>>>>>>> 9bbaa51 (update)
 
 function getDomain(url) {
 	const regex = /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n]+)/im;
@@ -27,8 +31,13 @@ function isURL(str) {
 module.exports = {
 	config: {
 		name: "cmd",
+<<<<<<< HEAD
 		version: "2.4.78",
 		author: "ST",
+=======
+		version: "1.17",
+		author: "NTKhang",
+>>>>>>> 9bbaa51 (update)
 		countDown: 5,
 		role: 2,
 		description: {
@@ -39,14 +48,20 @@ module.exports = {
 		guide: {
 			vi: "   {pn} load <tên file lệnh>"
 				+ "\n   {pn} loadAll"
+<<<<<<< HEAD
 				+ "\n   {pn} unload <tên file lệnh>"
 				+ "\n   {pn} del <tên file lệnh>: Xóa file lệnh"
+=======
+>>>>>>> 9bbaa51 (update)
 				+ "\n   {pn} install <url> <tên file lệnh>: Tải xuống và cài đặt một tệp lệnh từ một url, url là đường dẫn đến tệp lệnh (raw)"
 				+ "\n   {pn} install <tên file lệnh> <code>: Tải xuống và cài đặt một tệp lệnh từ một code, code là mã của lệnh",
 			en: "   {pn} load <command file name>"
 				+ "\n   {pn} loadAll"
+<<<<<<< HEAD
 				+ "\n   {pn} unload <command file name>"
 				+ "\n   {pn} del <command file name>: Delete command file"
+=======
+>>>>>>> 9bbaa51 (update)
 				+ "\n   {pn} install <url> <command file name>: Download and install a command file from a url, url is the path to the file (raw)"
 				+ "\n   {pn} install <command file name> <code>: Download and install a command file from a code, code is the code of the command"
 		}
@@ -54,6 +69,7 @@ module.exports = {
 
 	langs: {
 		vi: {
+<<<<<<< HEAD
 			missingFileName: "⚠️ | Vui lòng nhập vào tên lệnh bạn muốn reload",
 			loaded: "✅ | Đã load command \"%1\" thành công",
 			loadedError: "❌ | Load command \"%1\" thất bại với lỗi\n%2: %3",
@@ -106,6 +122,54 @@ module.exports = {
 	},
 
 	ST: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => {
+=======
+			missingFileName: "⚠ | Vui lòng nhập vào tên lệnh bạn muốn reload",
+			loaded: "✓ | Đã load command \"%1\" thành công",
+			loadedError: "✗ | Load command \"%1\" thất bại với lỗi\n%2: %3",
+			loadedSuccess: "✓ | Đã load thành công (%1) command",
+			loadedFail: "✗ | Load thất bại (%1) command\n%2",
+			openConsoleToSeeError: "👀 | Hãy mở console để xem chi tiết lỗi",
+			missingCommandNameUnload: "⚠ | Vui lòng nhập vào tên lệnh bạn muốn unload",
+			unloaded: "✓ | Đã unload command \"%1\" thành công",
+			unloadedError: "✗ | Unload command \"%1\" thất bại với lỗi\n%2: %3",
+			missingUrlCodeOrFileName: "⚠ | Vui lòng nhập vào url hoặc code và tên file lệnh bạn muốn cài đặt",
+			missingUrlOrCode: "⚠ | Vui lòng nhập vào url hoặc code của tệp lệnh bạn muốn cài đặt",
+			missingFileNameInstall: "⚠ | Vui lòng nhập vào tên file để lưu lệnh (đuôi .js)",
+			invalidUrl: "⚠ | Vui lòng nhập vào url hợp lệ",
+			invalidUrlOrCode: "⚠ | Không thể lấy được mã lệnh",
+			alreadExist: "⚠ | File lệnh đã tồn tại, bạn có chắc chắn muốn ghi đè lên file lệnh cũ không?\nThả cảm xúc bất kì vào tin nhắn này để tiếp tục",
+			installed: "✓ | Đã cài đặt command \"%1\" thành công, file lệnh được lưu tại %2",
+			installedError: "✗ | Cài đặt command \"%1\" thất bại với lỗi\n%2: %3",
+			missingFile: "⚠ | Không tìm thấy tệp lệnh \"%1\"",
+			invalidFileName: "⚠ | Tên tệp lệnh không hợp lệ",
+			unloadedFile: "✓ | Đã unload lệnh \"%1\""
+		},
+		en: {
+			missingFileName: "⚠ | Please enter the command name you want to reload",
+			loaded: "✓ | Loaded command \"%1\" successfully",
+			loadedError: "✗ | Failed to load command \"%1\" with error\n%2: %3",
+			loadedSuccess: "✓ | Loaded successfully (%1) command",
+			loadedFail: "✗ | Failed to load (%1) command\n%2",
+			openConsoleToSeeError: "👀 | Open console to see error details",
+			missingCommandNameUnload: "⚠ | Please enter the command name you want to unload",
+			unloaded: "✓ | Unloaded command \"%1\" successfully",
+			unloadedError: "✗ | Failed to unload command \"%1\" with error\n%2: %3",
+			missingUrlCodeOrFileName: "⚠ | Please enter the url or code and command file name you want to install",
+			missingUrlOrCode: "⚠ | Please enter the url or code of the command file you want to install",
+			missingFileNameInstall: "⚠ | Please enter the file name to save the command (with .js extension)",
+			invalidUrl: "⚠ | Please enter a valid url",
+			invalidUrlOrCode: "⚠ | Unable to get command code",
+			alreadExist: "⚠ | The command file already exists, are you sure you want to overwrite the old command file?\nReact to this message to continue",
+			installed: "✓ | Installed command \"%1\" successfully, the command file is saved at %2",
+			installedError: "✗ | Failed to install command \"%1\" with error\n%2: %3",
+			missingFile: "⚠ | Command file \"%1\" not found",
+			invalidFileName: "⚠ | Invalid command file name",
+			unloadedFile: "✓ | Unloaded command \"%1\""
+		}
+	},
+
+	onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => {
+>>>>>>> 9bbaa51 (update)
 		const { unloadScripts, loadScripts } = global.utils;
 		if (
 			args[0] == "load"
@@ -133,6 +197,10 @@ module.exports = {
 					.filter(file =>
 						file.endsWith(".js") &&
 						!file.match(/(eg)\.js$/g) &&
+<<<<<<< HEAD
+=======
+						(process.env.NODE_ENV == "development" ? true : !file.match(/(dev)\.js$/g)) &&
+>>>>>>> 9bbaa51 (update)
 						!configCommands.commandUnload?.includes(file)
 					)
 					.map(item => item = item.split(".")[0]) :
@@ -145,7 +213,11 @@ module.exports = {
 				if (infoLoad.status == "success")
 					arraySucces.push(fileName);
 				else
+<<<<<<< HEAD
 					arrayFail.push(` ❗ ${fileName} => ${infoLoad.error.name}: ${infoLoad.error.message}`);
+=======
+					arrayFail.push(` ! ${fileName} => ${infoLoad.error.name}: ${infoLoad.error.message}`);
+>>>>>>> 9bbaa51 (update)
 			}
 
 			let msg = "";
@@ -166,6 +238,7 @@ module.exports = {
 				message.reply(getLang("unloaded", infoUnload.name)) :
 				message.reply(getLang("unloadedError", infoUnload.name, infoUnload.error.name, infoUnload.error.message));
 		}
+<<<<<<< HEAD
 		else if (args[0] == "del" || args[0] == "delete") {
 			if (!args[1])
 				return message.reply(getLang("missingCommandNameUnload"));
@@ -230,11 +303,14 @@ module.exports = {
 				});
 			});
 		}
+=======
+>>>>>>> 9bbaa51 (update)
 		else if (args[0] == "install") {
 			let url = args[1];
 			let fileName = args[2];
 			let rawCode;
 
+<<<<<<< HEAD
 			// Check if user is replying to a message with URL
 			if (event.messageReply && event.messageReply.body) {
 				const repliedText = event.messageReply.body.trim();
@@ -262,6 +338,8 @@ module.exports = {
 				});
 			}
 
+=======
+>>>>>>> 9bbaa51 (update)
 			if (!url || !fileName)
 				return message.reply(getLang("missingUrlCodeOrFileName"));
 
@@ -275,7 +353,11 @@ module.exports = {
 			}
 
 			if (url.match(/(https?:\/\/(?:www\.|(?!www)))/)) {
+<<<<<<< HEAD
 				console.log("install", "url", url);
+=======
+				global.utils.log.dev("install", "url", url);
+>>>>>>> 9bbaa51 (update)
 				if (!fileName || !fileName.endsWith(".js"))
 					return message.reply(getLang("missingFileNameInstall"));
 
@@ -304,7 +386,11 @@ module.exports = {
 				}
 			}
 			else {
+<<<<<<< HEAD
 				console.log("install", "code", args.slice(1).join(" "));
+=======
+				global.utils.log.dev("install", "code", args.slice(1).join(" "));
+>>>>>>> 9bbaa51 (update)
 				if (args[args.length - 1].endsWith(".js")) {
 					fileName = args[args.length - 1];
 					rawCode = event.body.slice(event.body.indexOf('install') + 7, event.body.indexOf(fileName) - 1);
@@ -335,6 +421,7 @@ module.exports = {
 				});
 			else {
 				const infoLoad = loadScripts("cmds", fileName, log, configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang, rawCode);
+<<<<<<< HEAD
 
 				if (infoLoad.status == "success") {
 					const filePath = path.join(__dirname, fileName);
@@ -352,12 +439,18 @@ module.exports = {
 				} else {
 					message.reply(getLang("installedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message));
 				}
+=======
+				infoLoad.status == "success" ?
+					message.reply(getLang("installed", infoLoad.name, path.join(__dirname, fileName).replace(process.cwd(), ""))) :
+					message.reply(getLang("installedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message));
+>>>>>>> 9bbaa51 (update)
 			}
 		}
 		else
 			message.SyntaxError();
 	},
 
+<<<<<<< HEAD
 	onReply: async function ({ Reply, message, event, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang }) {
 		const { author, type, data } = Reply;
 
@@ -563,6 +656,17 @@ module.exports = {
 				message.reply(getLang("deleteError", fileName, error.message));
 			}
 		}
+=======
+	onReaction: async function ({ Reaction, message, event, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang }) {
+		const { loadScripts } = global.utils;
+		const { author, data: { fileName, rawCode } } = Reaction;
+		if (event.userID != author)
+			return;
+		const infoLoad = loadScripts("cmds", fileName, log, configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang, rawCode);
+		infoLoad.status == "success" ?
+			message.reply(getLang("installed", infoLoad.name, path.join(__dirname, fileName).replace(process.cwd(), ""))) :
+			message.reply(getLang("installedError", infoLoad.name, infoLoad.error.name, infoLoad.error.message));
+>>>>>>> 9bbaa51 (update)
 	}
 };
 
@@ -599,7 +703,19 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 		}
 		// const pathCommand = path.normalize(path.normalize(process.cwd() + `/${folder}/${fileName}.js`));
 		let pathCommand;
+<<<<<<< HEAD
 		pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+=======
+		if (process.env.NODE_ENV == "development") {
+			const devPath = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.dev.js`);
+			if (fs.existsSync(devPath))
+				pathCommand = devPath;
+			else
+				pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+		}
+		else
+			pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+>>>>>>> 9bbaa51 (update)
 
 		// ————————————————— CHECK PACKAGE ————————————————— //
 		const contentFile = fs.readFileSync(pathCommand, "utf8");
@@ -698,12 +814,19 @@ function loadScripts(folder, fileName, log, configCommands, api, threadModel, us
 			command.onLoad({ api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData });
 
 		const { envGlobal, envConfig } = configCommand;
+<<<<<<< HEAD
 		if (!command.onStart && !command.ST)
 			throw new Error(`onStart or ST function of ${commandType} "${scriptName}" is required`);
 		if (command.onStart && typeof command.onStart !== "function")
 			throw new Error(`onStart of ${commandType} "${scriptName}" must be a function`);
 		if (command.ST && typeof command.ST !== "function")
 			throw new Error(`ST of ${commandType} "${scriptName}" must be a function`);
+=======
+		if (!command.onStart)
+			throw new Error('Function onStart is missing!');
+		if (typeof command.onStart != "function")
+			throw new Error('Function onStart must be a function!');
+>>>>>>> 9bbaa51 (update)
 		if (!scriptName)
 			throw new Error('Name of command is missing!');
 		// ————————————————— CHECK ALIASES ————————————————— //

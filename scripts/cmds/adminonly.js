@@ -6,8 +6,13 @@ module.exports = {
 	config: {
 		name: "adminonly",
 		aliases: ["adonly", "onlyad", "onlyadmin"],
+<<<<<<< HEAD
 		version: "2.4.73",
 		author: "NTKhang Enhanced by Sheikh Tamim",
+=======
+		version: "1.5",
+		author: "NTKhang",
+>>>>>>> 9bbaa51 (update)
 		countDown: 5,
 		role: 2,
 		description: {
@@ -61,6 +66,7 @@ module.exports = {
 		}
 		else {
 			config.adminOnly.enable = value;
+<<<<<<< HEAD
 			
 			// Reset notification tracking when adminonly mode changes
 			if (value === true) {
@@ -73,6 +79,8 @@ module.exports = {
 				}
 			}
 			
+=======
+>>>>>>> 9bbaa51 (update)
 			message.reply(getLang(value ? "turnedOn" : "turnedOff"));
 		}
 

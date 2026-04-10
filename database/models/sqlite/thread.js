@@ -31,11 +31,15 @@ module.exports = function (sequelize) {
 			type: DataTypes.JSON,
 			defaultValue: {}
 		},
+<<<<<<< HEAD
 		isGroup: DataTypes.BOOLEAN,
 		approved: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: true
 		}
+=======
+		isGroup: DataTypes.BOOLEAN
+>>>>>>> 9bbaa51 (update)
 	}, {
 		sequelize,
 		modelName: "threads"

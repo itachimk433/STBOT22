@@ -5,8 +5,13 @@ const fs = require('fs-extra');
 module.exports = {
   config: {
     name: "hack",
+<<<<<<< HEAD
     version: "1.0.10",
     author: "Rakib Adil",
+=======
+    version: "1.1",
+    author: "Charles MK",
+>>>>>>> 9bbaa51 (update)
     description: "Create a fake hacked image for mentioned user or the sender user",
     guide: "use {p}hack or {p}hack @mention or reply to someone's message",
     countDown: 5,
@@ -124,4 +129,8 @@ module.exports = {
       return api.sendMessage("❌ Failed to create hack image. Try again later.", event.threadID, event.messageID);
     }
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 9bbaa51 (update)
