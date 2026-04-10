@@ -24,8 +24,8 @@ module.exports = {
 	langs: {
 		en: {
 			missingMessage: "Please enter your report message",
-			sendingReport: "📤 Sending your report to ST Bot owner...",
-			success: "✅ Your message has been sent to owner ST | Sheikh Tamim. He will check it and fix issues if needed.\n\n📱 If you want to chat with him, follow him on Instagram: @sheikh.tamim_lover\n📧 Check spam folder, maybe he can manually message you on FB\n🔄 Always check /update - he regularly updates ST BOT to keep it stable and clean",
+			sendingReport: "📤 Sending your report to MKBOTV5 owner...",
+			success: "✅ Your message has been sent to owner Charles MK. He will check it and fix issues if needed.\n\n📱 If you want to chat with him, follow him on Instagram: @sheikh.tamim_lover\n📧 Check spam folder, maybe he can manually message you on FB\n🔄 Always check /update - he regularly updates ST BOT to keep it stable and clean",
 			failed: "❌ Failed to send your report. Please try again later.",
 			processing: "⏳ Processing attachments..."
 		}

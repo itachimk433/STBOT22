@@ -8,7 +8,7 @@ module.exports = {
 		version: "2.4.74",
 		role: 0,
 		countDown: 0,
-		author: "ST | Sheikh Tamim",
+		author: "Charles MK",
 		description: "Displays all available commands and their categories.",
 		category: "help"
 	},
@@ -126,7 +126,7 @@ module.exports = {
 				helpMessage += '│ 💡 Type !help <cmdname>\n';
 				helpMessage += '│    for direct command info\n';
 				helpMessage += '╰─────────────────────◊\n';
-				helpMessage += '        💫 ST_BOT Help Menu';
+				helpMessage += '  💫 MK-BOT(version 5) Help Menu';
 
 				const sentMessage = await sendMessage(helpMessage, event.threadID);
 				
