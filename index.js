@@ -1,4 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+const http = require("http");
+const port = process.env.PORT || 10000;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Bot is active and running.");
+}).listen(port);
+
+>>>>>>> 4d63c89 (update)
 const { spawn } = require("child_process");
 const log = require("./logger/log.js");
 const http = require("http"); // Add this
