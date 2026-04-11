@@ -1,5 +1,4 @@
-
-const os = require("os");
+!cmd install status.js const os = require("os");
 
 module.exports = {
   config: {
@@ -18,49 +17,49 @@ module.exports = {
 
   ST: async function ({ api, event, threadsData, usersData, message }) {
     const { threadID, messageID } = event;
-    
+
     const loadingStages = [
       "🔄 Initializing system diagnostics...",
-      "📡 Measuring network latency...", 
+      "📡 Measuring network latency...",
       "💾 Analyzing system resources...",
       "📊 Compiling statistics...",
       "✅ Finalizing report..."
     ];
-    
+
     let currentStage = 0;
     let loadingProgress = 0;
-    
+
     const loadingMessage = await api.sendMessage(loadingStages[0], threadID);
-    
+
     // Create progress bar function
     const createProgressBar = (progress) => {
       const totalBars = 10;
       const filledBars = Math.floor((progress / 100) * totalBars);
       const emptyBars = totalBars - filledBars;
-      
+
       const progressBar = '▰'.repeat(filledBars) + '▱'.repeat(emptyBars);
       return `[${progressBar}] ${Math.floor(progress)}%`;
     };
-    
+
     let editCount = 0;
     const maxEdits = 4; // Show progress 4 times
-    
+
     const loadingInterval = setInterval(async () => {
       editCount++;
       loadingProgress += Math.random() * 15 + 20;
-      
+
       if (editCount >= maxEdits || loadingProgress >= 100) {
         loadingProgress = 100;
         clearInterval(loadingInterval);
-        
+
         setTimeout(() => generateFinalStatus(), 500);
         return;
       }
-      
+
       const progressBar = createProgressBar(loadingProgress);
       const stageIndex = Math.min(Math.floor(loadingProgress / 25), loadingStages.length - 2);
       const stageText = loadingStages[stageIndex];
-      
+
       try {
         await api.editMessage(
           `${stageText}\n\n${progressBar}\n📈 ${Math.floor(loadingProgress)}% Complete`,
@@ -70,13 +69,13 @@ module.exports = {
         // Silent error handling
       }
     }, 800);
-    
+
     const generateFinalStatus = async () => {
       try {
         // Generate random ping values
         const apiPing = Math.floor(Math.random() * 35) + 15;
         const botPing = Math.floor(Math.random() * 200) + 100;
-        
+
         // Calculate uptime
         const uptimeSec = process.uptime();
         const uptimeH = Math.floor(uptimeSec / 3600);
@@ -104,23 +103,23 @@ module.exports = {
         // Get database stats
         const totalThreads = global.db?.allThreadData?.length || 0;
         const totalUsers = global.db?.allUserData?.length || 0;
-        
+
         const getStatusIndicator = (ping) => {
-          if (ping < 100) return "🟢 Excellent";
-          if (ping < 300) return "🟡 Good";
-          if (ping < 500) return "🟠 Fair";
+          if (ping < 100) return "� Excellent";
+          if (ping < 300) return "� Good";
+          if (ping < 500) return "� Fair";
           return "🔴 Poor";
         };
-        
+
         const getMemoryStatus = (percent) => {
-          if (percent < 60) return "🟢 Optimal";
-          if (percent < 80) return "🟡 Moderate";
+          if (percent < 60) return "� Optimal";
+          if (percent < 80) return "� Moderate";
           return "🔴 High";
         };
 
-        const response = `╭────────────────────────────────╮
-│           🤖 MKBOTV5 STATUS           │
-╰────────────────────────────────╯
+        const response = `╭─────────────────╮
+│    🤖MKBOTV5 STATUS    │
+╰─────────────────╯
 
 📡 Network Performance
 ├─ API Ping: ${apiPing}ms ${getStatusIndicator(apiPing)}
@@ -148,9 +147,9 @@ module.exports = {
 ├─ Total Users: ${totalUsers.toLocaleString()}
 └─ Active Sessions: ${Object.keys(global.GoatBot?.onReply || {}).length}
 
-╭─────────────────────────────────╮
-│     Powered by Charles | MK      │
-╰─────────────────────────────────╯`;
+╭─────────────────╮
+│ Powered by Charles  MK   │
+╰─────────────────╯`;
 
         await api.editMessage(response, loadingMessage.messageID);
       } catch (error) {
